@@ -10,13 +10,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html")
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", (req, res) => {
-    const apiKey = process.env.API_KEY
+    const apiKey = process.env.API_KEY;
     const query = req.body.cityName;
-    const unit = "metric"
+    const unit = "metric";
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=" + unit + "&appid=" + apiKey;
 
     https.get(url, (response) => {
@@ -33,12 +33,12 @@ app.post("/", (req, res) => {
             res.write("<h1>The temperature in " + query + " is " + temp + "degrees Celcius.</h1>");
             res.write("<img src=" + imageURL + ">");
             res.send();
-        })
-    })
+        });
+    });
 });
 
 
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-})
+});

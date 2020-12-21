@@ -1,7 +1,6 @@
 const express = require('express')
 const https = require("https")
 const app = express()
-const port = 300
 const bodyParser = require("body-parser")
 require("dotenv").config()
 
@@ -38,6 +37,6 @@ app.post("/", (req, res) => {
 })
 
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`)
+app.listen(3000, () => {
+    console.log(`Server is running on http://localhost:3000`)
 })

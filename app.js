@@ -1,16 +1,16 @@
-const express = require('express')
-const https = require("https")
+const express = require('express');
+const https = require("https");
 const app = express();
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
 app.use(bodyParser.urlencoded({
     extended: true
-}))
+}));
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html")
-})
+});
 
 app.post("/", (req, res) => {
     const apiKey = process.env.API_KEY
@@ -33,10 +33,10 @@ app.post("/", (req, res) => {
             res.write("<img src=" + imageURL + ">")
             res.send()
         })
-    })
-})
+    });
+});
 
 
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:3000`)
-})
+});

@@ -1,8 +1,8 @@
 const express = require('express')
 const https = require("https")
-const app = express()
-const bodyParser = require("body-parser")
-require("dotenv").config()
+const app = express();
+const bodyParser = require("body-parser");
+require("dotenv").config();
 
 app.use(bodyParser.urlencoded({
     extended: true
